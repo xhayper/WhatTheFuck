@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using BepInEx;
@@ -70,6 +69,7 @@ namespace WhatTheFuck
                     var componentType = component.GetType();
                     if (componentType == typeof(SpriteRenderer))
                     {
+                        if (component.name == "CursorClone") continue;
                         var spriteRenderer = (SpriteRenderer) component;
                         var filtered = _availableSprite.FindAll(_ /*S*/ => true);
                         spriteRenderer.sprite = filtered[Random.RandomRangeInt(0, filtered.Count - 1)];

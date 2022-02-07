@@ -1,7 +1,7 @@
 {
   "name": "WhatTheFuck",
   "description": "What in the actual fuck?",
-  "version_number": "1.0.0",
+  "version_number": "1.0.1",
   "website_url": "https://github.com/xhayper/WhatTheFuck",
   "dependencies": [
     "BepInEx-BepInExPack_Inscryption-5.4.1701"
