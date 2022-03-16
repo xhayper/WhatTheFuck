@@ -2,3 +2,4 @@ production/
 .idea/
 obj/
 bin/
+lib/
