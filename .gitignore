@@ -1,7 +1,8 @@
 .vscode/
+.cache/
 .idea/
 
 production/
 lib/
-obj/
 bin/
+obj/
