@@ -1,21 +1,16 @@
-using System.Collections.Generic;
-using System.Linq;
-using BepInEx;
-using HarmonyLib;
-using UnityEngine;
 using Object = UnityEngine.Object;
-
-#pragma warning disable 169
+using System.Collections.Generic;
+using System.Reflection;
+using System.Linq;
+using UnityEngine;
+using HarmonyLib;
+using BepInEx;
 
 namespace WhatTheFuck
 {
-    [BepInPlugin(PluginGuid, PluginName, PluginVersion)]
+    [BepInPlugin(PluginInfo.PLUGIN_GUID, PluginInfo.PLUGIN_NAME, PluginInfo.PLUGIN_VERSION)]
     public class Plugin : BaseUnityPlugin
     {
-        private const string PluginGuid = "io.github.xhayper.whatthefuck";
-        private const string PluginName = "WhatTheFuck";
-        private const string PluginVersion = "1.0.0.0";
-
         private readonly List<Sprite> _availableSprite = new();
         private readonly List<AudioClip> _availableAudioClip = new();
 
@@ -47,8 +42,7 @@ namespace WhatTheFuck
                 // }
             }
 
-            var harmony = new Harmony(PluginGuid);
-            harmony.PatchAll();
+            Harmony.CreateAndPatchAll(Assembly.GetExecutingAssembly(), PluginInfo.PLUGIN_GUID);
         }
 
         private void Update()
